@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Northstar Board</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,500;6..72,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <nav class="topbar">
+          <div class="brand">
+            <span class="brand-mark">N</span>
+            <div>
+              <p class="eyebrow">Task organization hub</p>
+              <h1>Northstar Board</h1>
+            </div>
+          </div>
+          <button class="ghost-button" type="button">Invite Team</button>
+        </nav>
+
+        <section class="hero-grid">
+          <div class="hero-copy">
+            <p class="kicker">Minimal workflow control for hardworking teams</p>
+            <h2>Bring tasks, documents, and team momentum into one focused whiteboard.</h2>
+            <p class="hero-text">
+              Organize scattered work into a calm system. Build clear sections for what needs
+              action, keep priorities visible, and connect tools like Google Docs and Slides
+              without leaving the workspace.
+            </p>
+            <div class="hero-actions">
+              <button class="primary-button" type="button" data-scroll-target="board">
+                Open Board
+              </button>
+              <button class="secondary-button" type="button" data-scroll-target="connections">
+                View Connections
+              </button>
+            </div>
+            <ul class="hero-stats" aria-label="Workspace summary">
+              <li>
+                <strong>24</strong>
+                <span>active tasks</span>
+              </li>
+              <li>
+                <strong>08</strong>
+                <span>connected files</span>
+              </li>
+              <li>
+                <strong>93%</strong>
+                <span>team clarity score</span>
+              </li>
+            </ul>
+          </div>
+
+          <aside class="focus-card">
+            <div class="focus-card-header">
+              <p>Today’s focus</p>
+              <span>Monday sync</span>
+            </div>
+            <div class="focus-task-list">
+              <article class="mini-task accent-sand">
+                <span class="mini-task-tag">Priority</span>
+                <h3>Finalize onboarding checklist</h3>
+                <p>Share in Docs before 11:30 AM.</p>
+              </article>
+              <article class="mini-task accent-mint">
+                <span class="mini-task-tag">Review</span>
+                <h3>Update client deck links</h3>
+                <p>Slides and budget spreadsheet need one hub.</p>
+              </article>
+              <article class="mini-task accent-ink">
+                <span class="mini-task-tag">Team</span>
+                <h3>Assign next sprint owners</h3>
+                <p>Keep blockers visible for operations.</p>
+              </article>
+            </div>
+          </aside>
+        </section>
+      </header>
+
+      <main>
+        <section class="panel panel-connections" id="connections">
+          <div class="section-heading">
+            <p class="eyebrow">Connected workspace</p>
+            <h2>One hub for the tools your team already uses</h2>
+            <p>
+              Give every task a home and every document a clear place to live. These connection
+              cards frame how the board can bring linked work together.
+            </p>
+          </div>
+          <div class="connection-grid">
+            <article class="connection-card">
+              <div class="connection-icon mail">E</div>
+              <div>
+                <h3>Email Threads</h3>
+                <p>Turn approvals, follow-ups, and client requests into visible action items.</p>
+              </div>
+              <span>Inbox to action</span>
+            </article>
+            <article class="connection-card">
+              <div class="connection-icon notes">N</div>
+              <div>
+                <h3>Client Call Notes</h3>
+                <p>Capture Post-it style notes from calls and keep them close to the work.</p>
+              </div>
+              <span>Sticky insights</span>
+            </article>
+            <article class="connection-card">
+              <div class="connection-icon shots">V</div>
+              <div>
+                <h3>Screenshots</h3>
+                <p>Pin visual references, markups, and examples directly beside task planning.</p>
+              </div>
+              <span>Visual context</span>
+            </article>
+            <article class="connection-card">
+              <div class="connection-icon docs">D</div>
+              <div>
+                <h3>Google Docs</h3>
+                <p>Attach SOPs, meeting notes, briefs, and hiring plans to any task card.</p>
+              </div>
+              <span>Live notes</span>
+            </article>
+            <article class="connection-card">
+              <div class="connection-icon slides">S</div>
+              <div>
+                <h3>Google Slides</h3>
+                <p>Keep presentations tied to launch tasks, review checkpoints, and owners.</p>
+              </div>
+              <span>Deck sync</span>
+            </article>
+            <article class="connection-card">
+              <div class="connection-icon sheets">A</div>
+              <div>
+                <h3>Analytics Sheets</h3>
+                <p>Reference tracking, budgets, and scorecards directly from the board.</p>
+              </div>
+              <span>Numbers visible</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel board-panel" id="board">
+          <div class="section-heading board-heading">
+            <div>
+              <p class="eyebrow">Whiteboard</p>
+              <h2>Organize work by section, not by chaos</h2>
+            </div>
+            <form class="task-form" id="task-form">
+              <label class="sr-only" for="task-title">Task title</label>
+              <input
+                id="task-title"
+                name="taskTitle"
+                type="text"
+                maxlength="80"
+                placeholder="Add a new task"
+                required
+              />
+              <label class="sr-only" for="task-lane">Task section</label>
+              <select id="task-lane" name="taskLane">
+                <option value="ideas">Ideas</option>
+                <option value="today">Today</option>
+                <option value="next">Next Up</option>
+                <option value="done">Done</option>
+              </select>
+              <button class="primary-button" type="submit">Add Task</button>
+            </form>
+          </div>
+
+          <div class="whiteboard-workspace">
+            <section class="sketch-panel">
+              <div class="whiteboard-header">
+                <div>
+                  <p class="eyebrow">Draw space</p>
+                  <h3>Sketch ideas, client call takeaways, and task maps</h3>
+                </div>
+                <div class="draw-controls">
+                  <label for="brush-color">Color</label>
+                  <input id="brush-color" type="color" value="#8f5435" />
+                  <label for="brush-size">Brush</label>
+                  <input id="brush-size" type="range" min="2" max="14" value="4" />
+                  <button class="ghost-button" id="clear-canvas" type="button">Clear</button>
+                </div>
+              </div>
+              <div class="canvas-frame">
+                <canvas
+                  id="whiteboard-canvas"
+                  width="960"
+                  height="420"
+                  aria-label="Whiteboard drawing area"
+                ></canvas>
+              </div>
+            </section>
+
+            <aside class="reference-panel">
+              <div class="whiteboard-header">
+                <div>
+                  <p class="eyebrow">Reference stack</p>
+                  <h3>Everything the team needs in one glance</h3>
+                </div>
+              </div>
+              <div class="reference-list">
+                <article class="reference-card reference-email">
+                  <span class="reference-type">Emails</span>
+                  <h4>Client approval thread for onboarding timeline</h4>
+                  <p>Flagged follow-up from Anna with delivery questions and legal notes.</p>
+                </article>
+                <article class="reference-card reference-note">
+                  <span class="reference-type">Post-it Notes</span>
+                  <h4>Call notes from discovery session</h4>
+                  <p>Need a faster document handoff, fewer missed tasks, clearer ownership.</p>
+                </article>
+                <article class="reference-card reference-shot">
+                  <span class="reference-type">Screenshots</span>
+                  <h4>Visual references for team dashboard updates</h4>
+                  <p>Keep current UI captures next to sketches while planning changes.</p>
+                </article>
+                <article class="reference-card reference-file">
+                  <span class="reference-type">Google Files</span>
+                  <h4>Docs, Slides, and Sheets linked to this board</h4>
+                  <p>Meeting brief, launch deck, and weekly tracker all live beside tasks.</p>
+                </article>
+              </div>
+            </aside>
+          </div>
+
+          <div class="board-grid">
+            <section class="lane" data-lane="ideas">
+              <div class="lane-header">
+                <h3>Ideas</h3>
+                <span>Shape rough plans</span>
+              </div>
+              <div class="lane-list" id="ideas-list">
+                <article class="task-card" data-task-id="seed-1">
+                  <p class="task-meta">Research</p>
+                  <h4>Collect team pain points from the last sprint retrospective</h4>
+                  <div class="task-footer">
+                    <span>Docs attached</span>
+                    <div class="task-actions">
+                      <button class="task-action" type="button">Move</button>
+                      <button class="task-delete" type="button">Delete</button>
+                    </div>
+                  </div>
+                </article>
+                <article class="task-card" data-task-id="seed-2">
+                  <p class="task-meta">Planning</p>
+                  <h4>Create one template for recurring weekly operations tasks</h4>
+                  <div class="task-footer">
+                    <span>Reusable</span>
+                    <div class="task-actions">
+                      <button class="task-action" type="button">Move</button>
+                      <button class="task-delete" type="button">Delete</button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="lane" data-lane="today">
+              <div class="lane-header">
+                <h3>Today</h3>
+                <span>Visible priorities</span>
+              </div>
+              <div class="lane-list" id="today-list">
+                <article class="task-card" data-task-id="seed-3">
+                  <p class="task-meta">Execution</p>
+                  <h4>Review connected Slides deck before the client checkpoint</h4>
+                  <div class="task-footer">
+                    <span>Owner: Maya</span>
+                    <div class="task-actions">
+                      <button class="task-action" type="button">Move</button>
+                      <button class="task-delete" type="button">Delete</button>
+                    </div>
+                  </div>
+                </article>
+                <article class="task-card" data-task-id="seed-4">
+                  <p class="task-meta">Admin</p>
+                  <h4>Send Google Docs links for onboarding packet approvals</h4>
+                  <div class="task-footer">
+                    <span>Due 2 PM</span>
+                    <div class="task-actions">
+                      <button class="task-action" type="button">Move</button>
+                      <button class="task-delete" type="button">Delete</button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="lane" data-lane="next">
+              <div class="lane-header">
+                <h3>Next Up</h3>
+                <span>Ready when space opens</span>
+              </div>
+              <div class="lane-list" id="next-list">
+                <article class="task-card" data-task-id="seed-5">
+                  <p class="task-meta">Coordination</p>
+                  <h4>Build a shared approvals section for finance and operations</h4>
+                  <div class="task-footer">
+                    <span>Cross-team</span>
+                    <div class="task-actions">
+                      <button class="task-action" type="button">Move</button>
+                      <button class="task-delete" type="button">Delete</button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+
+            <section class="lane" data-lane="done">
+              <div class="lane-header">
+                <h3>Done</h3>
+                <span>Momentum archive</span>
+              </div>
+              <div class="lane-list" id="done-list">
+                <article class="task-card is-complete" data-task-id="seed-6">
+                  <p class="task-meta">Completed</p>
+                  <h4>Map all weekly meetings to one shared board homepage</h4>
+                  <div class="task-footer">
+                    <span>Cleared</span>
+                    <div class="task-actions">
+                      <button class="task-action" type="button">Move</button>
+                      <button class="task-delete" type="button">Delete</button>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </section>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <template id="task-template">
+      <article class="task-card">
+        <p class="task-meta">New Task</p>
+        <h4></h4>
+        <div class="task-sketch" hidden>
+          <img class="task-sketch-image" alt="Attached whiteboard sketch" />
+        </div>
+        <div class="task-footer">
+          <span>Added just now</span>
+          <div class="task-actions">
+            <button class="task-action" type="button">Move</button>
+            <button class="task-delete" type="button">Delete</button>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
